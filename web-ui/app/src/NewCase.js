@@ -10,7 +10,24 @@ class NewCase extends Component {
  
     this.state = {
       activeMenuItem: null,
+
     }
+  }
+
+  getEmptyRow() {
+    return {
+      symptom: null,
+      start_date: null,
+      continuing: null
+      end_date: null,
+    };
+  }
+
+  renderRow(row) {
+    var symptomInput = (<Input transparent placeholder='Sneezing...' onChange />);
+    var startDateInput = (<Input transparent placeholder='10/3/17...' />);
+    var continuingInput = (<Icon color='green' name='checkmark' size='large' />);
+    var endDateInput = (<Input transparent placeholder='N/A...' />);
   }
 
   render() {
@@ -35,7 +52,7 @@ class NewCase extends Component {
               <Table celled>
                 <Table.Header>
                   <Table.Row>
-                    <Table.HeaderCell>Sympton</Table.HeaderCell>
+                    <Table.HeaderCell>Symptom</Table.HeaderCell>
                     <Table.HeaderCell>Start Date</Table.HeaderCell>
                     <Table.HeaderCell>Continuing?</Table.HeaderCell>
                     <Table.HeaderCell>End Date</Table.HeaderCell>
